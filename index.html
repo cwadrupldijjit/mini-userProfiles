@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="userProfiles">
+<html lang="en" ng-app="UserProfiles">
 	<head>
 		<meta charset="UTF-8">
 		<title>Mini User Profiles</title>
@@ -9,8 +9,13 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	
-	<body>
-		
+	<body ng-controller="MainController as mc">
+		<div class='user-profile' ng-repeat="user in mc.users">
+			<img ng-src="{{ user.avatar }}">
+			<p>
+				{{ user.first_name }} {{ user.last_name }}
+			</p>
+		</div>
 		
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="js/app.js"></script>
